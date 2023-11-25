@@ -6,7 +6,11 @@ body{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-image: radial-gradient(circle at 50.74% 41.5%, #55558e 0, #2c2f51 25%, #060619 50%, #000000 75%, #000000 100%);
 }
 main{
     flex-grow: 1;
+}
+.navbar{
+    background-image: radial-gradient(circle at 50.74% 41.5%, #55558e 0, #2c2f51 25%, #060619 50%, #000000 75%, #000000 100%);
 }
