@@ -40,7 +40,7 @@
         <p><h1 class=" text-center">Administrador De Peliculas </h1></p>
         <div class=" d-flex">
           <p class="m-1 me-3">Opciones!</p>
-          <button class="btn btn-primary">Agregar</button>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalPeliculas">Agregar</button>
         </div>
         <div class="table-responsive">
             <table class="table">
@@ -48,8 +48,8 @@
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">Titulo</th>
-                    <th scope="col">Description</th>
                     <th scope="col">Url</th>
+                    <th scope="col">Description</th>
                     <th scope="col">Genero</th>
                     <th scope="col">Acciones</th>
                   </tr>
@@ -63,26 +63,57 @@
                     <td>Anime</td>
                     <td><button class="btn btn-warning">Editar</button> <br><button class="btn btn-danger">Borrar</button></td>
                   </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    <td>@fat</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                  </tr>
                 </tbody>
               </table>
         </div>
     </main>
+<!-- Modal -->
+<div class="modal fade" id="modalPeliculas" tabindex="-1" aria-labelledby="modalPeliculasLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="modalPeliculasLabel">Informacion Agregada</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="CodigoPeliculas" class="form-label">Codigo</label>
+            <input type="text" class="form-control" id="CodigoPeliculas" placeholder="Ingrese el codigo de su pelicula" aria-describedby="codigo">
+          </div>
+          <div class="mb-3">
+            <label for="TituloPeliculas" class="form-label">Titulo</label>
+            <input type="text" class="form-control" required minlength="5" maxlength="50" id="TituloPeliculas" placeholder="Ingrese un Titulo" aria-describedby="titulo">
+          </div>
+          <div class="mb-3">
+            <label for="imagenPeliculas" class="form-label" >imagen</label>
+            <input type="text" class="form-control "  id="imagenPeliculas" placeholder="Ingrese Aqui el Url de su iamgen" aria-describedby="imagen">
+          </div>
+          <div class="mb-3">
+            <label for="DescriptionPeliculas" class="form-label d-flex">Descripcion</label>
+            <textarea id="DescriptionPeliculas" required minlength="50" maxlength="100" rows="4" class="form-control" placeholder="Escribe tus comentarios aquí"></textarea> 
+          </div>
+          <div class="mb-3">
+            <label for="generoPeliculas" class="form-label">Genero</label>
+            <select id="generoPeliculas" class="form-control">
+              <option value="">Selecione una Opciones</option>
+              <option value="Comedia">Comedia</option>
+              <option value="Accion">Accion</option>
+              <option value="Fantasia">Fantasia</option>
+              <option value="Terror">Terror</option>
+            </select>
+          </div>
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="check1">
+            <label class="form-check-label " for="check1">Estas Seguro/a de guarda</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
 
+      </div>
+    </div>
+  </div>
+</div>
     <footer class="container-fluid bg-black text-center text-light py-3">
         <p> footer a maquetar</p>
     </footer>
